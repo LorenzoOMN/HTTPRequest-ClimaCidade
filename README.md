@@ -1,75 +1,89 @@
-# React + TypeScript + Vite
+# 🚀 Nome do Seu Projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um site usando docker, vite, react, ts, entre outras para mostrar ao usuario qual o clima da cidade pesquisada.
 
-Currently, two official plugins are available:
+## 🛠️ Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Antes de iniciar, você precisa das seguintes ferramentas instaladas:
+* **Node.js** (versão 18 ou superior) - *Apenas para a opção com Vite nativo*
+* **Docker Desktop** (Windows/Mac) ou **Docker Engine** (Linux)
+* **WSL2 com Ubuntu** (Caso esteja no Windows e prefira o ambiente Linux)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Como Iniciar o Projeto
 
-## Expanding the ESLint configuration
+Escolha a forma que preferir para rodar o projeto em sua máquina:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Opção 1: Via Docker no Ubuntu (WSL2) - Recomendado para Windows
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Se você usa Windows com WSL2 e quer a máxima performance do ecossistema Linux:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Abra o terminal do seu **Ubuntu (WSL)**.
+2. Garanta que a integração está ativa no Docker Desktop em: *Settings > Resources > WSL Integration > Ative o Ubuntu*.
+3. Clone o repositório dentro do ambiente WSL e acesse a pasta:
+   ```bash
+   git clone https://github.com
+   cd seu-repositorio
+   ```
+4. Suba os containers do Docker:
+   ```bash
+   docker compose up -d
+   ```
+5. O projeto estará disponível no seu navegador em `http://localhost:5173` (ou na porta configurada).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Opção 2: Via Docker Desktop (Prompt/PowerShell/Mac)
 
-```
+Se prefere rodar o Docker diretamente pelo terminal padrão do seu sistema operacional:
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+1. Certifique-se de que o aplicativo **Docker Desktop** está aberto e rodando.
+2. Abra o seu terminal (PowerShell, CMD ou Terminal do Mac).
+3. Clone o repositório e acesse a pasta:
+   ```bash
+   git clone https://github.com
+   cd seu-repositorio
+   ```
+4. Inicialize os containers:
+   ```bash
+   docker-compose up -d
+   ```
+5. Acesse o projeto em `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Opção 3: Diretamente pelo Vite (Sem Docker)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Se você não quer usar containers e prefere rodar o projeto nativamente na sua máquina:
 
-```
+1. Abra o terminal na pasta do projeto clonado.
+2. Instale as dependências do Node.js:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor de desenvolvimento do Vite:
+   ```bash
+   npm run dev
+   ```
+4. O terminal exibirá o endereço local, geralmente `http://localhost:5173/`.
+
+---
+
+## 🛑 Como Parar o Projeto
+
+* **Se iniciou via Docker:**
+  ```bash
+  docker compose down
+  ```
+* **Se iniciou via Vite:**
+  Pressione `Ctrl + C` no terminal onde o processo está rodando.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* [Vite](https://vitejs.dev) - Build tool e Servidor de Desenv.
+* [Docker](https://docker.com) - Containerização
+* [WSL2 / Ubuntu](https://microsoft.com) - Ambiente Linux no Windows
+* [Linguagens e ferramentas] - (TypeScript, CSS, JavaScript, Dockerfile, HTML, vite, react ...)
+
+---
+
+✒️ **Autor:** [Lorenzo](https://github.com/LorenzoOMN)
