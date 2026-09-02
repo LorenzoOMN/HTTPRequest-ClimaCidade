@@ -82,7 +82,7 @@ Se você não quer usar containers e prefere rodar o projeto nativamente na sua 
 * [Vite](https://vitejs.dev) - Build tool e Servidor de Desenv.
 * [Docker](https://docker.com) - Containerização
 * [WSL2 / Ubuntu](https://microsoft.com) - Ambiente Linux no Windows
-* [Linguagens e ferramentas] - (TypeScript, CSS, JavaScript, Dockerfile, HTML, vite, react ...)
+* [WSL2 / Ubuntu](https://microsoft.com) - Subsistema Linux para Windows
 
 ---
 
