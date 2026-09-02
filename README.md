@@ -1,6 +1,6 @@
 # 🚀 HTTPRequest ClimaCidade
 
-Uma breve descrição de uma frase sobre o que o seu projeto faz e qual problema ele resolve.
+Um site usando docker, vite, react, ts, entre outras para mostrar ao usuario qual o clima da cidade pesquisada.
 
 ## 🛠️ Pré-requisitos
 
