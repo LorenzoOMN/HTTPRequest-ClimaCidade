@@ -82,8 +82,8 @@ Se você não quer usar containers e prefere rodar o projeto nativamente na sua 
 * [Vite](https://vitejs.dev) - Build tool e Servidor de Desenv.
 * [Docker](https://docker.com) - Containerização
 * [WSL2 / Ubuntu](https://microsoft.com) - Ambiente Linux no Windows
-* [Sua Tecnologia] - (Ex: React, Vue, TypeScript, Tailwind)
+* [Linguagens] - (React, Vue, TypeScript, Tailwind, TS)
 
 ---
 
-✒️ **Autor:** [Seu Nome](https://github.com)
+✒️ **Autor:** Lorenzo (https://github.com/LorenzoOMN)
