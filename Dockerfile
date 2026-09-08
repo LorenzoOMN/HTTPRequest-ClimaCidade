@@ -1,20 +1,20 @@
-# Usa o Node 20 (versão moderna e recomendada para o Vite)
-FROM node:20-alpine
+# Etapa 1: compilar a aplicaçao
+FROM node:22-alpine AS build
 
-# Cria a pasta do app dentro do Docker
 WORKDIR /app
 
-# Copia os arquivos de configuração de dependências
-COPY package*.json ./
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Instala as dependências (incluindo o TypeScript e os tipos do React)
-RUN npm install
-
-# Copia o resto dos arquivos do projeto (incluindo tsconfig.json, src, etc.)
 COPY . .
+RUN npm run build
 
-# Abre a porta do Vite
-EXPOSE 5173
+# Etapa 2: servir os arquivos
+FROM nginx:alpine
 
-# Roda o servidor de desenvolvimento do Vite
-CMD ["npm", "run", "dev"]
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

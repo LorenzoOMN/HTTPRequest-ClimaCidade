@@ -23,7 +23,9 @@ export default function WeatherProvider({children}: WeatherProviderProps) {
       const foundCities = await searchCities(name);
       setCities(foundCities);
     } catch (e) {
-      setError(e.message);
+      if ( e instanceof Error ) {
+        setError(e.message);
+      }
     } finally {
       setLoadingMessage("");
     }
@@ -38,8 +40,10 @@ export default function WeatherProvider({children}: WeatherProviderProps) {
 
       const lista = await getForecast(id);
       setForeCast(lista);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e) {
+      if ( e instanceof Error ) {
+        setError(e.message);
+      }
     }finally {
         setLoadingMessage("");
     }

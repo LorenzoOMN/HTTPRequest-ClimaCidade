@@ -11,7 +11,7 @@ export default function ForecastCard() {
             </h2>
             <div className="forecast-day">
                 <p>Data: {formatDate(forecast?.clima[0].data ?? "")}</p>
-                <p>Condiçao: {formatDate(forecast?.clima[0].condicao_desc ?? "")}</p>
+                <p>Condiçao: {forecast?.clima[0].condicao_desc ?? ""}</p>
                 <p>Temperatura mínima: {forecast?.clima[0].min} </p>
                 <p>Temperatura máxima: {forecast?.clima[0].max} </p>
                 <p>Índice UV: {forecast?.clima[0].indice_uv}</p>
